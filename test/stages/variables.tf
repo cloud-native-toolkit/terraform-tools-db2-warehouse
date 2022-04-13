@@ -1,50 +1,30 @@
-
-# Resource Group Variables
-variable "resource_group_name" {
+variable "db2_warehouse_host" {
   type        = string
-  description = "Existing resource group where the IKS cluster will be provisioned."
+  description = "The host name for the DB2 Warehouse instance"
+  default = "host"
 }
 
-variable "ibmcloud_api_key" {
-  type        = string
-  description = "The api key for IBM Cloud access"
+variable "db2_warehouse_port" {
+  type        = number
+  description = "The port for the DB2 Warehouse instance"
+  default = 10000
 }
 
-variable "region" {
+variable "db2_warehouse_database_name" {
   type        = string
-  description = "Region for VLANs defined in private_vlan_number and public_vlan_number."
+  description = "The database name for the DB2 Warehouse instance"
+  default = "db_name"
 }
 
-variable "namespace" {
+variable "db2_warehouse_username" {
   type        = string
-  description = "Namespace for tools"
+  description = "The username for the DB2 Warehouse instance"
+  default = "myusername"
 }
 
-variable "cluster_name" {
+variable "db2_warehouse_password" {
   type        = string
-  description = "The name of the cluster"
-  default     = ""
-}
-
-variable "cluster_type" {
-  type        = string
-  description = "The type of cluster that should be created (openshift or kubernetes)"
-}
-
-variable "cluster_exists" {
-  type        = string
-  description = "Flag indicating if the cluster already exists (true or false)"
-  default     = "true"
-}
-
-variable "name_prefix" {
-  type        = string
-  description = "Prefix name that should be used for the cluster and services. If not provided then resource_group_name will be used"
-  default     = ""
-}
-
-variable "vpc_cluster" {
-  type        = bool
-  description = "Flag indicating that this is a vpc cluster"
-  default     = false
+  description = "The password for the DB2 Warehouse instance"
+  sensitive = true
+  default = "mypassword"
 }
