@@ -1,0 +1,42 @@
+name: db2-warehouse-existing
+type: terraform
+description: Module that represents an existing DB2 Warehouse instance
+tags:
+  - tools
+  - db2 warehouse
+interfaces:
+  - github.com/cloud-native-toolkit/automation-modules#db2-warehouse
+versions:
+  - platforms: []
+    dependencies: []
+    variables:
+      - name: host
+        type: string
+        description: The host name for the DB2 Warehouse instance
+      - name: port
+        type: number
+        description: The port for the DB2 Warehouse instance
+      - name: database_name
+        type: string
+        description: The database name for the DB2 Warehouse instance
+      - name: username
+        type: string
+        description: The username for the DB2 Warehouse instance
+      - name: password
+        type: string
+        description: The password for the DB2 Warehouse instance
+        sensitive: true
+    version: v0.1.0
+    outputs:
+      - name: host
+        description: The host name for the DB2 Warehouse instance
+      - name: port
+        description: The port for the DB2 Warehouse instance
+      - name: database_name
+        description: The database name for the DB2 Warehouse instance
+      - name: username
+        description: The username for the DB2 Warehouse instance
+      - name: password
+        description: The password for the DB2 Warehouse instance
+        sensitive: true
+id: github.com/cloud-native-toolkit/terraform-tools-db2-warehouse
